@@ -9,6 +9,17 @@
 #include <linux/srcu.h>
 #include <linux/android_kabi.h>
 
+
+/* --- 手动添加开始: 修复 LXC/Docker 补丁缺失的枚举定义 --- */
+enum mmu_notifier_event {
+    MMU_NOTIFY_UNMAP,
+    MMU_NOTIFY_CLEAR,
+    MMU_NOTIFY_PROTECTION_VMA,
+    MMU_NOTIFY_PROTECTION_PAGE,
+    MMU_NOTIFY_SOFT_DIRTY,
+};
+/* --- 手动添加结束 --- */
+
 struct mmu_notifier;
 struct mmu_notifier_ops;
 
